@@ -1,0 +1,444 @@
+body{
+margin:0;
+    background: #fff8c2;
+border:0;
+font-family: 'Nunito Sans', Microsoft Yahei,sans-serif;
+color:#26a65e;
+}
+.Qbanner, .Qfooter{
+    
+    overflow: hidden;
+}
+.Qintro, .Qlists, .Qres, .Qloader{
+    overflow-x: hidden;
+    position: absolute;
+        z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 450px;
+    height: 100%;
+    margin: auto;
+    max-width: 100%;
+    background-color: #fff8c2;
+    min-width: 40%;
+	background-image: url(../data/sun.png);
+    background-position: top center;
+    background-size: cover;
+}
+.Qloader{
+    z-index: 0;
+    display: none;
+    text-align: center;
+    font-size: 32px;
+    
+}
+.Qloader #cr{
+    animation:rotate 5s linear infinite;
+    width: 55px;
+    height: 55px;
+    margin: 100px auto 40px auto;
+	background-image: url(../data/loader.png);
+    background-position: center center;
+    background-size: cover;
+}
+.Qintro button{
+	    height: 50px;
+    font-size: 20px;
+    margin: 10px auto;
+    border-radius: 500px;
+    width: 60%;
+	max-width:400px;
+    outline: none;
+    border: solid 0.75px #09773e;
+    background: rgba(255,255,255,0);
+    font-family: 'Nunito Sans', Microsoft Yahei,sans-serif;
+    cursor: pointer;
+    font-weight: bold;
+    color: #09773e;
+	transition:linear 0.5s;
+}
+.Qintro button:hover{
+background:#09773e;
+color:#fff
+
+}.Qcon,.Qpre{
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    transform: translate(-50%,0);
+    width: 300px;
+    height: max-content;
+    margin: 25px auto 70px auto;
+    max-width: 70%;
+    background: #272715;
+}
+.Qrev{
+    position: fixed;
+    left: 50%;
+    display: none;
+    top: 184px;
+    transform: translate(-50%,0);
+    width: 400px;
+    z-index: 0;
+    border-radius: 50%;
+    margin: auto;
+    justify-content: space-between;
+    max-width: 103%;
+    height: 36px;
+}
+
+.Qrev #prv, .Qrev #nxt{
+    width: 50px;cursor:pointer;
+    color: #6a5d3f;
+    font-size: 26px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.Qsel{
+
+    width: 80%;
+    margin: 27px auto;
+    line-height: 22px;
+    text-align: center;
+}
+
+
+.Qsels[active='true']{
+    background: rgba(255,255,255,0);
+    border: solid 1px #248b51;
+}
+
+.Qsels, .Qinpc, .Qinpi{
+    cursor: pointer;
+    background: #248b51;
+    width: 81%;
+    display: inline-block;
+    margin: 2px auto;
+    color: #fffce2;
+    transition: linear 0.5s;
+    border: solid 1px rgba(255,255,255,0);
+    font-weight: bold;
+    padding: 6px 12px;}
+    .Qsels img,.Qinp img{
+        width: 21px;
+    position: absolute;
+    right: 19.5%;
+    }
+	.Qsels:hover, .Qinpc:hover, .Qinpi:hover{
+		background:rgba(255,255,255,0);
+		border:solid 1px #248b51;
+		}
+		
+	.Qinp span,	.Qinp inp{
+	    display:inline-block;
+    outline: none;
+	}	
+	.Qintro .Qpre{display:none}
+.Qinp{
+    
+    background: none;
+    width: 81%;
+    display: inline-block;
+    margin: 2px auto;
+    color: #fffce2;
+    transition: linear 0.5s;
+		border:solid 1px #248b51;
+    font-weight: bold;
+    padding: 6px 12px;}
+    .Qsels img{
+        width: 21px;
+    position: absolute;
+    right: 19.5%;
+    }
+		
+		.Qlists, .Qcon, .Qres{display:none;}
+		
+.Qintro,  .Qres{
+		animation: fill 0.4s;}
+		.Qcon{
+			animation: move 0.4s;
+			}
+			@keyframes move{
+				0%{
+					opacity:0;
+    transform: translate(-80%,0);}
+				100%{
+					opacity:1;
+    transform: translate(-50%,0);}
+				}
+@keyframes fill{
+	0%{opacity:0}
+	100%{opacity:1}
+	}
+	
+	.Qtit{ ;background: rgba(179, 152, 109, 0.48);
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 2.5px 2px rgba(0,0,0,0.3);
+    letter-spacing: 0.2px;
+    padding: 23px 19px;
+}
+
+.Qtit span{
+    align-items: center;
+    justify-content: center;
+ font-size: 18px;
+    padding: 0 8px;
+    
+    display: block;
+}
+.Qtit sm{
+    
+    font-size: 72%;
+    line-height: 18px;
+    display: block;
+    padding: 8px 0 8px 0;
+}
+.Qtit img{
+        width: 80%;
+    margin: auto;
+    display: flex;
+}
+.Qbanner{
+position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%,0);
+    width: 450px;
+    height: 100px;
+    margin: auto;
+    max-width: 100%;
+    min-width: 40%;
+    z-index: 111;
+}
+
+.Qproc{
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 7px;
+    background: #8ccd8d;
+}
+.Qproc #av{
+    position: absolute;
+    left: 0;
+    width:0;
+    height: 7px;
+    background: #26a65e;
+    border-radius: 0px 90px 90px 0px;
+}
+.Qfooter{
+	position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%,0);
+    width: 450px;
+    height: 100px;
+    margin: auto;
+    max-width: 100%;
+    background: #fff8c2;
+    min-width: 40%;
+    z-index: 99999999;
+	    background: url(../data/base.png);
+    background-size: contain;
+    background-repeat: repeat-x;
+    background-position-x: center;
+    background-position-y: bottom;
+transition:linear 0.5s;
+	}
+	.Qfooter:hover{
+		background-position-x:161px;transition:linear 15s;
+		}
+.Qintro .Qflex{
+	    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    top: 100px;
+	
+    padding: 30px 0 87px 0;
+	
+}
+	
+	.Qintro h1{
+		white-space: nowrap;
+    text-align: center;
+    line-height: 49px;
+    color: #26a65e;
+		}
+		.Qintro p{text-align: center;
+    color: #0f7f43;
+    line-height: 19px;
+    font-size: 13px;
+    padding: 0 35px;
+    max-width: 500px;
+    margin: 0px auto 15px auto;
+}
+		.Qintro b{
+			font-size:70px;
+		    color: #26a65e;
+    font-family: 'Satisfy', cursive;    line-height: 114px;
+    text-shadow: 4px 0px 0px rgba(38, 166, 94, 0.53);}
+    
+    .Qres .Qflex{
+            display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    padding: 30px 0 87px 0;
+    top: 100px;
+}
+ .Qres h1{
+        text-align: center;
+    font-size: 90px;
+    font-family: 'Nunito Sans', Microsoft Yahei,sans-serif;
+    margin: auto;
+    line-height: 191px;
+    width: 200px;
+    height: 200px;
+    border: solid 4px #26a65e;
+    border-radius: 50%;
+ }
+ .Qres h3{
+         background: #26a65e;
+    color: #fcf9e3;
+    letter-spacing: 0.8px;
+    text-align: center;
+    width: 206px;
+    height: 58px;
+    margin: auto;
+    transform: translate(0,-30px);
+    max-width: 80%;
+    font-size: 31px;
+    line-height: 56px;
+ }
+ .Qres p{
+         text-align: center;
+    color: #0f7f43;
+    line-height: 19px;
+    font-size: 13px;
+    padding: 0 35px;
+    max-width: 500px;
+    margin: 0px auto 15px auto;
+ }
+ .Qres p a{
+     text-decoration:underline;
+     color:#0f7f43;
+     cursor:pointer;
+ }
+ .Qres .Qbtn{
+    height: 40px;
+    font-size: 18px;
+    margin: 5px 5px;
+    border-radius: 500px;
+    max-width: 400px;
+    outline: none;
+    border: none;
+    background: rgba(255,255,255,0);
+    font-family: 'Nunito Sans', Microsoft Yahei,sans-serif;
+    cursor: pointer;
+    font-weight: bold;
+    color: #09773e;
+    transition: linear 0.5s;
+}
+ 
+ .Qsharer{
+     display: flex;
+    flex-direction: row;
+    margin: auto;
+    justify-content: space-around;
+    width: 300px;
+    max-width: 100%;
+    overflow-y: auto;
+ }   
+ .Qsharer #fb{ padding: 0 19px;
+    white-space: nowrap;
+    background: #4267b2;
+    color: #fff;
+    line-height: 40px;}
+    .Qsharer #rt{     width: 40px;
+    background: #888;
+    background-image: url(../data/reload.svg);
+    background-size: 56% auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    }
+ .Qsharer #cp{     width: 40px;
+    background-color: #38633d;
+    color: #fff;
+    background-image: url(../data/share.svg);
+    background-size: 56% auto;
+    background-position: center center;
+    background-repeat: no-repeat;}
+    .Qlink{ display:none; 
+    margin: 15px auto;
+    width: 300px;
+    max-width: 100%;
+    animation:fill 0.4s;
+}
+    .Qlink input{  border: solid 6px #38633d;
+        margin: 5px;
+    color: #38633d;
+        vertical-align: middle;
+        width: 279px;
+        font-family: 'Nunito Sans', Microsoft Yahei,sans-serif;
+        font-size: 18px;height: 35px;
+        overflow-y: hidden;
+        padding-left: 10px;
+        overflow-x: scroll;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+    }
+    .Qlink span{color: #38633d;
+    font-weight: bold;
+    margin: 5px;}
+    
+    .Qplayer{width: 40px;
+    height: 40px;
+    position: fixed;
+    right: 20px;
+    top: 25px;
+    background: url(../data/music.png);
+    background-size: 60% auto;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    transition: linear 0.5s;
+    border: solid 1px #ea6248;
+    border-radius: 50%;
+    cursor: pointer;}
+    .auactive{
+        animation:rotate 8s linear infinite;
+    }
+    
+    
+    .Qsocial{
+    margin: 15px auto;
+    }
+    .fb_iframe_widget{
+        height:max-content;
+    }
+    @keyframes rotate{
+  from { 
+            transform: rotate(0deg); 
+        } to { 
+            transform: rotate(360deg); 
+        }
+    }
+ body > :last-child {
+visibility:hidden
+}

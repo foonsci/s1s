@@ -1,0 +1,490 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>End-of-year senior one chemistry test</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans|Oleo+Script|Satisfy" />
+<link rel="stylesheet" type="text/css" href="css/style.css?8">
+<link rel="shortcut icon" href="data/logo.png" />
+<script src="ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/cookie.js?8"></script>
+<script src="js/main.js?8"></script>
+
+</head>
+
+<body>
+
+<div class="Qbanner">
+    <div class="Qproc">
+    <div id="av"></div>
+    
+    </div>
+<a href="javascript:location.reload()"><img src="data/logo.png" width="100px" height="auto"></a>
+<div class="Qplayer"></div>
+<audio id="au" loop src="data/bgm.mp3"></audio>
+<script>
+
+    var au = document.getElementById("au");
+$(".Qplayer").click(function() {
+          if (au.paused ) {
+         au.play();
+  $(this).addClass("auactive");
+     } else {
+         au.pause();
+         
+  $(this).removeClass("auactive");
+     }
+ 
+     
+});
+</script>
+
+</div>
+
+<div class="Qfooter">
+</div>
+<div class="Qintro">
+<div class="Qflex">
+	<h1><b>Chemistry</b><br>Senior 1 Review</h1>
+    <p>   It's the end of senior one science life. So far are you ready to strive for your brand new senior two lessons? Let's check it out!<br>(Choose the best answer)</p>
+	<button>START!</button></div>
+	
+<div class="Qpre">
+    <div class="Qtit">
+<span>Enter your name:</span>
+
+</div>
+<div class="Qsel">
+<div class="Qinp">
+    <span contenteditable maxlength="15">-</span>
+</div>
+<div class="Qinpi">GO</div>
+</div>
+</div>
+</div>
+
+
+
+    <div class="Qrev">
+    <div id="prv"><img src="data/prv.png" width="17px" height="auto"></div>
+    <div id="nxt"><img src="data/nxt.png" width="17px" height="auto"></div>
+    </div>
+<div class="Qlists">
+
+<div class="Qcon" id="1">
+<div class="Qtit">
+<span>The following substances are homogeneous mixture, except</span>
+
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">brine</div>
+<div class="Qsels" value="b">sea water</div>
+<div class="Qsels" value="c">milk</div>
+<div class="Qsels" value="d">blood plasma</div>
+</div>
+</div>
+<div class="Qcon" id="2">
+<div class="Qtit">
+<span>Which of the following methods may be used to separate a solid mixture of ammonium chloride and sodium chloride?</span>
+
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">heating the solid mixture directly</div>
+<div class="Qsels" value="b">adding in aqueous ammonia solution</div>
+<div class="Qsels" value="c">adding in silver nitrate solution</div>
+<div class="Qsels" value="d">that is impossible to do so</div>
+</div>
+</div>
+
+<div class="Qcon" id="3">
+<div class="Qtit">
+<span>How to separate gases from liquid air?</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">using fractional distillation</div>
+<div class="Qsels" value="b">using separating funnel</div>
+<div class="Qsels" value="c">using diffusion</div>
+<div class="Qsels" value="d">using sublimation</div>
+</div>
+</div>
+
+<div class="Qcon" id="4">
+<div class="Qtit">
+<span>Isotopes of same element...</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">have different chemical properties</div>
+<div class="Qsels" value="b">have different physical properties</div>
+<div class="Qsels" value="c">are radioactive</div>
+<div class="Qsels" value="d">have different chemical formulae</div>
+</div>
+</div>
+
+<div class="Qcon" id="5">
+<div class="Qtit">
+<img src="data/Qcon/q5.png">
+<span>The diagram above does not obey...</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">Aufbau principle</div>
+<div class="Qsels" value="b">Pauli exclusion principle</div>
+<div class="Qsels" value="c">Hund's rule</div>
+<div class="Qsels" value="d">none of the answer</div>
+</div>
+</div>
+
+<div class="Qcon" id="6">
+<div class="Qtit">
+<span>Which of the following ions obey octet electron configurations?</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">H<sup>+</sup></div>
+<div class="Qsels" value="b">N<sup>3-</sup></div>
+<div class="Qsels" value="c">O<sup>-</sup></div>
+<div class="Qsels" value="d">C<sup>2-</sup></div>
+</div>
+</div>
+
+<div class="Qcon" id="7">
+<div class="Qtit">
+<span>Which element is a metalloid?</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">Li</div>
+<div class="Qsels" value="b">Be</div>
+<div class="Qsels" value="c">B</div>
+<div class="Qsels" value="d">C</div>
+</div>
+</div>
+
+<div class="Qcon" id="8">
+<div class="Qtit">
+<span>Going down a group in periodic table,</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">reactivity decreases</div>
+<div class="Qsels" value="b">electropositivity increases</div>
+<div class="Qsels" value="c">outer electron of element is more strongly attracted by nucleus</div>
+<div class="Qsels" value="d">atomic radius of element becomes smaller</div>
+</div>
+</div>
+
+<div class="Qcon" id="9">
+<div class="Qtit">
+<span>Which is not covalent compound?</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">AlCl<sub>3</sub></div>
+<div class="Qsels" value="b">Al<sub>2</sub>O<sub>3</sub></div>
+<div class="Qsels" value="c">CCl<sub>4</sub></div>
+<div class="Qsels" value="d">AlBr<sub>3</sub></div>
+</div>
+</div>
+
+<div class="Qcon" id="10">
+<div class="Qtit">
+<span>which statement is correct regarding an ionic compound?</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">brittle</div>
+<div class="Qsels" value="b">not soluble in water</div>
+<div class="Qsels" value="c">low melting point but high boiling point</div>
+<div class="Qsels" value="d">ions are free to move in solid state</div>
+</div>
+</div>
+
+
+
+<div class="Qcon" id="11">
+<div class="Qtit">
+<span>Which is non-polar molecule?</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">CCl<sub>4</sub></div>
+<div class="Qsels" value="b">H<sub>2</sub>O</div>
+<div class="Qsels" value="c">NH<sub>3</sub></div>
+<div class="Qsels" value="d">Cl<sub>2</sub>O</div>
+</div>
+</div>
+
+<div class="Qcon" id="12">
+<div class="Qtit">
+<span>In general, the forces of repulsion decrease in the order:</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">lone-pair/lone-pair > bonded-pair/lone-pair > bonded-pair/bonded-pair</div>
+<div class="Qsels" value="b">lone-pair/lone-pair > bonded-pair/bonded-pair > bonded-pair/lone-pair</div>
+<div class="Qsels" value="c">bonded-pair/lone-pair > lone-pair/lone-pair > bonded-pair/bonded-pair</div>
+<div class="Qsels" value="d">bonded-pair/bonded-pair > bonded-pair/lone-pair > lone-pair/lone-pair</div>
+</div>
+</div>
+
+<div class="Qcon" id="13">
+<div class="Qtit">
+<span>What is the molecular shape of dihydrogen monoxide?</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">trigonal planar</div>
+<div class="Qsels" value="b">tetrahedral</div>
+<div class="Qsels" value="c">trigonal bipyramidal</div>
+<div class="Qsels" value="d">bent-shape</div>
+</div>
+</div>
+
+<div class="Qcon" id="14">
+<div class="Qtit">
+<span>Which of the following substances are polarized molecules?<br>I Carbon Tetrachloride<br>II Ammonia Gas<br>III Dry Ice<br>IV Water</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">I,II,III</div>
+<div class="Qsels" value="b">II,III,IV</div>
+<div class="Qsels" value="c">II,IV</div>
+<div class="Qsels" value="d">III,IV</div>
+</div>
+</div>
+
+<div class="Qcon" id="15">
+<div class="Qtit">
+<span>Determine the oxidation number of phosphorous in phosphorous trichloride.</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">-3</div>
+<div class="Qsels" value="b">-5</div>
+<div class="Qsels" value="c">+3</div>
+<div class="Qsels" value="d">+5</div>
+</div>
+</div>
+
+<div class="Qcon" id="16">
+<div class="Qtit">
+<span>What is the molarity of the solution formed by dissolving 50g of sulphuric acid in 250cm<sup>3</sup> of water?<sm>(Take density of sulphuric acid be 1g/cm<sup>3</sup>, answer in 2 decimal places)</sm></span>
+</div>
+<div class="Qsel">
+<div class="Qinp">
+    <span contenteditable maxlength="4">-</span>
+    <span>mol/l</span>
+</div>
+<div class="Qinpc">GO</div>
+</div>
+</div>
+
+<div class="Qcon" id="17">
+<div class="Qtit">
+<span>The half equations of sulphur dioxide and acidified permangante ion are:<br>
+<sm>
+SO<sub>2</sub> + 2H<sub>2</sub>O -> SO<sub>4</sub><sup>2-</sup> + 2e<sup>-</sup> + 4H<sup>+</sup><br>
+MnO<sub>4</sub><sup>-</sup> + 5e<sup>-</sup> + 8H<sup>+</sup> -> Mn<sup>2+</sup> + 4H<sub>2</sub>O<br>
+</sm>
+How many moles of permanganate ions are required to completely react with 32g of SO<sub>2</sub>?</span>
+</div>
+<div class="Qsel">
+<div class="Qinp">
+    <span contenteditable maxlength="3">-</span>
+    <span>mol</span>
+</div>
+<div class="Qinpc">GO</div>
+</div>
+</div>
+
+<div class="Qcon" id="18">
+<div class="Qtit">
+<span>In the ionic equation of xR<sup>+</sup> + yH<sup>+</sup> + O<sub>2</sub> -> mR<sup>3+</sup> + nH<sub>2</sub>O</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">m=1, R is the oxidized form</div>
+<div class="Qsels" value="b">m=x, R is the oxidized form</div>
+<div class="Qsels" value="c">m=y, R is the reduced form</div>
+<div class="Qsels" value="d">m=4, R is the reduced form</div>
+</div>
+</div>
+
+<div class="Qcon" id="19">
+<div class="Qtit">
+<span>Which of the following has the highest rate of diffusion?</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">CO<sub>2</sub></div>
+<div class="Qsels" value="b">N<sub>2</sub></div>
+<div class="Qsels" value="c">He</div>
+<div class="Qsels" value="d">Ar</div>
+</div>
+</div>
+
+<div class="Qcon" id="20">
+<div class="Qtit">
+<span>Under constant volume, 60L and temperature, 27°C, pressure of hydrogen gas decrease from 4.9×10<sup>6</sup>Pa to  9.8×10<sup>5</sup>Pa, calculate the mass of hydrogen lost.</span>
+</div>
+<div class="Qsel">
+<div class="Qinp">
+    <span contenteditable maxlength="7">-</span>
+    <span>g</span>
+</div>
+<div class="Qinpc">GO</div>
+</div>
+</div>
+
+<div class="Qcon" id="21">
+<div class="Qtit">
+<span>Which of the following contains the greatest number of atoms?</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">10g neon</div>
+<div class="Qsels" value="b">5.5ml water at 277K</div>
+<div class="Qsels" value="c">0.45mol oxygen</div>
+<div class="Qsels" value="d">5.6L carbon dioxide at STP</div>
+</div>
+</div>
+
+<div class="Qcon" id="22">
+<div class="Qtit">
+<span>Which is not general properties of ozone?</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">pale blue gas at RTP</div>
+<div class="Qsels" value="b">reducing agent</div>
+<div class="Qsels" value="c">sterilizing agent</div>
+<div class="Qsels" value="d">slightly soluble in water</div>
+</div>
+</div>
+
+<div class="Qcon" id="23">
+<div class="Qtit">
+<span>Which of the following oxides is unlikely to dissolve in aqueous sodium hydroxide?</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">SiO<sub>2</sub></div>
+<div class="Qsels" value="b">MgO</div>
+<div class="Qsels" value="c">P<sub>4</sub>O<sub>10</sub></div>
+<div class="Qsels" value="d">Al<sub>2</sub>O<sub>3</sub></div>
+</div>
+</div>
+
+<div class="Qcon" id="24">
+<div class="Qtit">
+<span>Which of the following gas is neutral?</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">SO<sub>3</sub></div>
+<div class="Qsels" value="b">CO<sub>2</sub></div>
+<div class="Qsels" value="c">H<sub>2</sub>S</div>
+<div class="Qsels" value="d">NO</div>
+</div>
+</div>
+
+<div class="Qcon" id="25">
+<div class="Qtit">
+<span>Which of the following solution is most suitable for use in the detection of hydrogen sulphide?</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">limewater</div>
+<div class="Qsels" value="b">sodium nitrate</div>
+<div class="Qsels" value="c">potassium permanganate</div>
+<div class="Qsels" value="d">lead acetate</div>
+</div>
+</div>
+
+<div class="Qcon" id="26">
+<div class="Qtit">
+<span>Another name of fuming sulphuric(VI)</span>
+</div>
+<div class="Qsel">
+<div class="Qinp">
+    <span contenteditable maxlength="5">-</span>
+</div>
+<div class="Qinpc">GO</div>
+</div>
+</div>
+
+<div class="Qcon" id="27">
+<div class="Qtit">
+<img src="data/Qcon/q27.jpg">
+<span>This is</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">The Contact Process</div>
+<div class="Qsels" value="b">Solvay Process</div>
+<div class="Qsels" value="c">Ostwald Process</div>
+<div class="Qsels" value="d">Haber Process</div>
+</div>
+</div>
+
+<div class="Qcon" id="28">
+<div class="Qtit">
+<span>Cl<sub>2</sub> and SO<sub>2</sub> are bleaching agents. If both are used together for bleaching purpose, what is the bleaching result?</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">enhanced</div>
+<div class="Qsels" value="b">unchanged</div>
+<div class="Qsels" value="c">uncertain</div>
+<div class="Qsels" value="d">weaken</div>
+</div>
+</div>
+
+<div class="Qcon" id="29">
+<div class="Qtit">
+<span>What are the main raw material required in Solvay Process?</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">S, O<sub>2</sub></div>
+<div class="Qsels" value="b">N<sub>2</sub>, H<sub>2</sub></div>
+<div class="Qsels" value="c">NH<sub>3</sub>, NaCl</div>
+<div class="Qsels" value="d">NaCl, CaCO<sub>3</sub></div>
+</div>
+</div>
+
+<div class="Qcon" id="30">
+<div class="Qtit">
+<span>Which of the following 0.1 mol L<sup>-1</sup> ionic solution is colourless?</span>
+</div>
+<div class="Qsel">
+<div class="Qsels" value="a">Cu<sup>2+</sup></div>
+<div class="Qsels" value="b">Fe<sup>3+</sup></div>
+<div class="Qsels" value="c">Ca<sup>2+</sup></div>
+<div class="Qsels" value="d">MnO<sub>4</sub><sup>-</sup></div>
+</div>
+</div>
+</div>
+
+
+
+<div class="Qloader">
+<div id="cr"></div>
+         <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2&appId=731763497011360&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-page" data-href="https://www.facebook.com/FoonYewKulaiScienceAlliance" data-width="300" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/FoonYewKulaiScienceAlliance" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/FoonYewKulaiScienceAlliance">宽理联盟</a></blockquote></div>
+</div>
+
+
+<div class="Qres">
+
+    <div class="Qflex">
+<h1></h1>
+    <h3></h3>
+    <p>Well, your overall mark is <span id="chck"></span>. <span id="fdbk">Keep it up!</span> <br><a>>> Review your test</a></p>	<div class="Qsharer">
+        <div class="Qbtn" id="rt"></div>
+        <div class="Qbtn" id="fb">Share to Facebook</div>
+        <div class="Qbtn" id="cp"></div></div> 
+        <div class="Qlink"><input readonly="readonly"><span>Link copied. Share it now!</span></div> 
+<div class="Qsocial">
+
+
+<div class="fb-page" data-href="https://www.facebook.com/FoonYewKulaiScienceAlliance" data-width="300" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/FoonYewKulaiScienceAlliance" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/FoonYewKulaiScienceAlliance">宽理联盟</a></blockquote></div>
+</div>
+
+</div>
+	
+
+
+</div>
+
+
+
+</body>
+</html>
