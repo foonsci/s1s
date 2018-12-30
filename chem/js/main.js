@@ -48,10 +48,10 @@ function qnxt(arr){
 
                     }
                 };
-                xhttp.open("GET", "result?qn=" + tot + res, true);
+                xhttp.open("GET", "https://foonsci.000webhostapp.com/s1s/result?qn=" + tot + res, true);
                 xhttp.send();
                              var xhttp2 = new XMLHttpRequest();   
-                            xhttp2.open("GET", "data?qn=" + tot + res , true);
+                            xhttp2.open("GET", "https://foonsci.000webhostapp.com/s1s/data?qn=" + tot + res , true);
                             xhttp2.send();
 
 
