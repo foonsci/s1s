@@ -77,6 +77,30 @@ $(".Qplayer").click(function() {
    }(document, 'script', 'facebook-jssdk'));
 		
 	
+
+
+			
+			
+		   function statusChangeCallback(response) {
+                console.log('statusChangeCallback');
+                console.log(response);
+                if (response.status === 'connected') {
+                    console.log('Welcome!  Fetching your information.... ');
+                    FB.api('/me', function (response) {
+                        console.log('Successful login for: ' + response.name);
+                        document.getElementById('status').innerHTML =
+                          'Thanks for logging in, ' + response.name + '!';
+			    arr= response.name;
+	res = res + "&q0=" + arr;
+        setCookie("q0", arr, 30);
+        $('.Qintro').hide();
+        $('.Qlists').show();
+        $('#1').show();
+		$("span[contenteditable]").focus();
+
+                    });
+                }
+            }
 </script>
 <div id="status"></div>
 <div class="fb-login-button" data-width="220" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true">
