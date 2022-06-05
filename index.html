@@ -1,0 +1,82 @@
+<div id="view"></div>
+<textarea id="result" type="text" wrap="soft" style="background:#f1a3ff;width:250px;height:50px;cursor:pointer" readonly onclick="myFunction(this)"></textarea>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+function myFunction(copyText) {
+
+	copyText.select();
+	navigator.clipboard.writeText(copyText.value);
+}
+	var ics_str = "BEGIN:VCALENDAR\nPRODID:-//Google Inc//Google Calendar 70.9054//EN\nVERSION:2.0\nCALSCALE:GREGORIAN\nMETHOD:PUBLISH\nX-WR-CALNAME:user\nX-WR-TIMEZONE:Asia/Kuala_Lumpur\nBEGIN:VTIMEZONE\nTZID:Asia/Kuala_Lumpur\nX-LIC-LOCATION:Asia/Kuala_Lumpur\nBEGIN:STANDARD\nTZOFFSETFROM:+0800\nTZOFFSETTO:+0800\nTZNAME:+08\nDTSTART:19700101T000000\nEND:STANDARD\nEND:VTIMEZONE\nBEGIN:VTIMEZONE\nTZID:Asia/Singapore\nX-LIC-LOCATION:Asia/Singapore\nBEGIN:STANDARD\nTZOFFSETFROM:+0800\nTZOFFSETTO:+0800\nTZNAME:+08\nDTSTART:19700101T000000\nEND:STANDARD\nEND:VTIMEZONE";
+	$("#view").load('timetable.html table:first-child');
+	var event_o = [];
+	const week_day = ["SU","MO","TU","WE","TH","FR","SA"];
+	for (var i = 0; i < 5; i++)
+	{
+		var time = 700;
+		var td_size = document.getElementsByTagName("tr")[3 + i].getElementsByTagName("td").length;
+		for (var j = 0; j < td_size; j++)
+		{
+			var elm_tmp = document.getElementsByTagName("tr")[3 + i].getElementsByTagName("td")[j];
+			if (elm_tmp.getAttribute("class") == "unit") 
+			{
+				var event_o_tmp = {};
+				var duration = elm_tmp.getAttribute("colspan") * 50;
+				event_o_tmp.name = elm_tmp.getElementsByTagName("span")[0].innerHTML;
+				event_o_tmp.location = elm_tmp.innerText.split("\n")[2];
+				event_o_tmp.day = i + 1;
+				event_o_tmp.s_time = time;
+				if (event_o_tmp.location != "OTL")
+					event_o_tmp.location = elm_tmp.innerText.split("\n")[0];
+				event_o_tmp.e_time = (time += (duration));
+				event_o.push(event_o_tmp);
+			}
+			else time += 50;
+		}
+		
+	}
+	console.log(event_o);
+	
+	
+	var date_cur = new Date("2022-06-13T12:00:00+08:00");
+	var wday_cur = 1;
+	//for (var i = 0; i < 14; i++)
+	{
+		for (var j = 0; j < event_o.length; j++)
+		{
+			if (event_o[j].day != wday_cur)
+			{
+				if (event_o[j].day - wday_cur == 1)
+				{
+					date_cur.setDate(date_cur.getDate() + 1);
+					wday_cur++;
+				}
+				else
+				{
+					date_cur.setDate(date_cur.getDate() + 3);
+					wday_cur = 1;
+				}
+			}
+			var date_str = date_cur.getFullYear() + ((date_cur.getMonth() < 10)?"0":"") + (date_cur.getMonth() + 1) + ((date_cur.getDate() < 10)?"0":"") + date_cur.getDate();
+			ics_str += "\nBEGIN:VEVENT\nTRANSP:OPAQUE";
+			ics_str += "\nDTSTART;TZID=Asia/Kuala_Lumpur:" + date_str + "T" + ((event_o[j].s_time < 1000)?"0":"") + event_o[j].s_time + "00";
+			ics_str += "\nDTEND;TZID=Asia/Kuala_Lumpur:" + date_str + "T" + ((event_o[j].e_time < 1000)?"0":"") + event_o[j].e_time + "00";
+			ics_str += "\nRRULE:FREQ=WEEKLY;WKST=SU;COUNT=14;BYDAY=" + week_day[event_o[j].day];
+			ics_str += "\nDTSTAMP:"+ date_str + "T" + ((event_o[j].s_time < 1000)?"0":"") + event_o[j].s_time + "00";
+			ics_str += "Z\nUID:73ril"+Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5)+"u6u22v6gmsvfr8ae@google.com";
+			ics_str += "\nDESCRIPTION:" + event_o[j].location;
+			ics_str += "\nSEQUENCE:1\nSTATUS:CONFIRMED";
+			ics_str += "\nSUMMARY:" + event_o[j].name;
+			ics_str += "\nEND:VEVENT";
+		}
+	}
+	ics_str += "\nEND:VCALENDAR";
+	document.getElementById("result").innerHTML = ics_str;
+	var downloadableLink = document.createElement('a');
+	downloadableLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(ics_str));
+	downloadableLink.download = "June2022" + ".ics";
+	document.body.appendChild(downloadableLink);
+	downloadableLink.click();
+	document.body.removeChild(downloadableLink);
+</script>
