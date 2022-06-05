@@ -1,15 +1,54 @@
-<div id="view"></div>
-<textarea id="result" type="text" wrap="soft" style="background:#f1a3ff;width:250px;height:50px;cursor:pointer" readonly onclick="myFunction(this)"></textarea>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-function myFunction(copyText) {
-
-	copyText.select();
-	navigator.clipboard.writeText(copyText.value);
+<style>
+body {
+	background: #eee;
+	color: #222;
+	font-family: Arial;
 }
+.container {
+	margin: auto;
+	background: #fff;
+	height: 650px;
+	width: 80%;
+	text-align: center;
+}
+
+.container .header {
+	padding: 20px 0;
+}
+.container input{
+	border: none;
+}
+#view {
+	display: none;
+}
+</style>
+<div class="container">
+<div class="header">
+<h1> GCal AutoGenerator v1.0 </h1>
+</div>
+<span>
+(1) Download timetable page from UTAR Portal. (right-click > Save as...)<br><br>
+(2) Upload UTAR Intranet_files/index.html here:</span>
+<br><br>
+<input type="file" name="in_file" id="in_file">
+<br><br>(3) Your file will be downloaded shortly.
+<br><i>Can't download the file? Copy the following code and save it as June2022.ics .</i>
+<br><br>
+<textarea id="result" type="text" wrap="soft" style="width:250px;height:150px;cursor:pointer;display:none;margin:auto" readonly onclick="myFunction(this)"></textarea>
+</div>
+
+<div id="view"></div>
+<script>
+document.getElementById('in_file').addEventListener('change', function() {
+	var fin = new FileReader();
+    fin.onload = function(){
+	var table_part = fin.result.substring(
+		fin.result.lastIndexOf('<table width="100%" align="center" cellpadding="0" cellspacing="0" class="tbltimetable">'), 
+		fin.result.lastIndexOf("</tbody></table>")
+	);
+    document.getElementById('view').innerHTML = table_part;
+	document.getElementById('view').innerHTML = "<table>" + document.getElementsByTagName('table')[0].innerHTML + "</table>";
 	var ics_str = "BEGIN:VCALENDAR\nPRODID:-//Google Inc//Google Calendar 70.9054//EN\nVERSION:2.0\nCALSCALE:GREGORIAN\nMETHOD:PUBLISH\nX-WR-CALNAME:user\nX-WR-TIMEZONE:Asia/Kuala_Lumpur\nBEGIN:VTIMEZONE\nTZID:Asia/Kuala_Lumpur\nX-LIC-LOCATION:Asia/Kuala_Lumpur\nBEGIN:STANDARD\nTZOFFSETFROM:+0800\nTZOFFSETTO:+0800\nTZNAME:+08\nDTSTART:19700101T000000\nEND:STANDARD\nEND:VTIMEZONE\nBEGIN:VTIMEZONE\nTZID:Asia/Singapore\nX-LIC-LOCATION:Asia/Singapore\nBEGIN:STANDARD\nTZOFFSETFROM:+0800\nTZOFFSETTO:+0800\nTZNAME:+08\nDTSTART:19700101T000000\nEND:STANDARD\nEND:VTIMEZONE";
-	$("#view").load('timetable.html table:first-child');
 	var event_o = [];
 	const week_day = ["SU","MO","TU","WE","TH","FR","SA"];
 	for (var i = 0; i < 5; i++)
@@ -73,10 +112,22 @@ function myFunction(copyText) {
 	}
 	ics_str += "\nEND:VCALENDAR";
 	document.getElementById("result").innerHTML = ics_str;
-	var downloadableLink = document.createElement('a');
-	downloadableLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(ics_str));
-	downloadableLink.download = "June2022" + ".ics";
-	document.body.appendChild(downloadableLink);
-	downloadableLink.click();
-	document.body.removeChild(downloadableLink);
+	document.getElementById("result").style.display = "block";
+	var dl_link = document.createElement('a');
+	dl_link.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(ics_str));
+	dl_link.download = "June2022.ics";
+	document.body.appendChild(dl_link);
+	dl_link.click();
+	document.body.removeChild(dl_link);
+    }
+              
+    fin.readAsText(this.files[0]);
+});
+
+function myFunction(copyText) {
+	copyText.select();
+	navigator.clipboard.writeText(copyText.value);
+	alert("File copied!");
+}
+
 </script>
