@@ -46,7 +46,7 @@ document.getElementById('in_file').addEventListener('change', function() {
 	);
     document.getElementById('view').innerHTML = table_part;
 	document.getElementById('view').innerHTML = "<table>" + document.getElementsByTagName('table')[0].innerHTML + "</table>";
-	var ics_str = "BEGIN:VCALENDAR\nPRODID:-//Google Inc//Google Calendar 70.9054//EN\nVERSION:2.0\nCALSCALE:GREGORIAN\nMETHOD:PUBLISH\nX-WR-CALNAME:user\nX-WR-TIMEZONE:Asia/Kuala_Lumpur\nBEGIN:VTIMEZONE\nTZID:Asia/Kuala_Lumpur\nX-LIC-LOCATION:Asia/Kuala_Lumpur\nBEGIN:STANDARD\nTZOFFSETFROM:+0800\nTZOFFSETTO:+0800\nTZNAME:+08\nDTSTART:19700101T000000\nEND:STANDARD\nEND:VTIMEZONE\nBEGIN:VTIMEZONE\nTZID:Asia/Singapore\nX-LIC-LOCATION:Asia/Singapore\nBEGIN:STANDARD\nTZOFFSETFROM:+0800\nTZOFFSETTO:+0800\nTZNAME:+08\nDTSTART:19700101T000000\nEND:STANDARD\nEND:VTIMEZONE";
+	var ics_str = "BEGIN:VCALENDAR\nPRODID:-//Google Inc//Google Calendar 70.9054//EN\nVERSION:2.0\nCALSCALE:GREGORIAN\nMETHOD:PUBLISH\nX-WR-CALNAME:"+prompt("Enter your Google Name:", "JING YING NG")+"\nX-WR-TIMEZONE:Asia/Kuala_Lumpur\nBEGIN:VTIMEZONE\nTZID:Asia/Kuala_Lumpur\nX-LIC-LOCATION:Asia/Kuala_Lumpur\nBEGIN:STANDARD\nTZOFFSETFROM:+0800\nTZOFFSETTO:+0800\nTZNAME:+08\nDTSTART:19700101T000000\nEND:STANDARD\nEND:VTIMEZONE\nBEGIN:VTIMEZONE\nTZID:Asia/Singapore\nX-LIC-LOCATION:Asia/Singapore\nBEGIN:STANDARD\nTZOFFSETFROM:+0800\nTZOFFSETTO:+0800\nTZNAME:+08\nDTSTART:19700101T000000\nEND:STANDARD\nEND:VTIMEZONE";
 	var event_o = [];
 	const week_day = ["SU","MO","TU","WE","TH","FR","SA"];
 	for (var i = 0; i < 5; i++)
