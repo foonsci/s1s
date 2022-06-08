@@ -21,9 +21,6 @@ body {
 .container input{
 	border: none;
 }
-#view {
-	display: none;
-}
 		</style>
 	</head>
 	<body>
@@ -54,10 +51,10 @@ document.getElementById('in_file').addEventListener('change', function() {
     fin.onload = function(){
 	    
     document.getElementById('view').innerHTML = fin.result;
-	var total = document.querySelectorAll("#inst18 .list .listentry").length;
+	var total =document.getElementsByClassName("weeks")[0].offsetHeight;
 	if (getCookie(fin.fileName) != total)
 	{
-		alert((parseInt(total) - parseInt(getCookie("UAMG1053"))) + " resources is just added to "+fin.fileName+". Please take note!");
+		alert((parseInt(total) - parseInt(getCookie(fin.fileName))) + " resources is just added to "+fin.fileName+". Please take note!");
 		document.cookie = fin.fileName+"="+total+"; expires=Sat, 31 Dec 2022 12:00:00 UTC; path=/";
 	}
     }
