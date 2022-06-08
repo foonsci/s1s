@@ -52,12 +52,32 @@ body {
 document.getElementById('in_file').addEventListener('change', function() {
 	var fin = new FileReader();
     fin.onload = function(){
-      alert(document.querySelectorAll("#inst18 .list .listentry").length);
+	    var total = document.querySelectorAll("#inst18 .list .listentry").length;
+	if (getCookie("UAMG1053") != total)
+	{
+		alert("Change!");
+		document.cookie = "UAMG1053="+total+"; expires=Sat, 31 Dec 2022 12:00:00 UTC; path=/";
+	}
     }
               
     fin.readAsText(this.files[0]);
 });
-
+			
+function getCookie(name) {
+  name += "=";
+  var ca = document.cookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (!c.indexOf(name)) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+			
 function myFunction(copyText) {
 	copyText.select();
 	navigator.clipboard.writeText(copyText.value);
