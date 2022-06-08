@@ -25,6 +25,9 @@ body {
 		</style>
 	</head>
 	<body>
+		<div id="HEHEoverlay" style="position:fixed;left:0;top:0;width:100%;bottom:0;font-size:50px">
+			<span id="hehehehehe"></span>
+		</div>
 		<div class="container">
 			<div class="header">
 				<h1> GCal AutoGenerator v1.0 </h1>
@@ -56,9 +59,14 @@ document.getElementById('in_file').addEventListener('change', function() {
 	var total =document.getElementsByClassName("weeks")[0].offsetHeight;
 	if (getCookie(courseID) != total)
 	{
-		alert((parseInt(total) - parseInt(getCookie(courseID))) + " resources is just added to "+courseID+". Please take note!");
+		document.getElementById("hehehehehe").innerHTML += ((parseInt(total) - parseInt(getCookie(courseID))) + " resources is just added to "+courseID+". Please take note!<br><br>");
 		document.cookie = courseID+"="+total+"; expires=Sat, 31 Dec 2022 12:00:00 UTC; path=/";
 	}
+	    var arr = ["MPU34112","UAMG1043","UCCC2063","UCCD2044","UCCD2063","UCCD2323"];
+	    for(var i = 1; i <= 5; i++)
+	    {
+		    document.getElementById("hehehehehe").innerHTML += arr[i] + ": " +  getCookie(arr[i]) + "<br>";
+	    }
     }
               
     fin.readAsText(this.files[0]);
