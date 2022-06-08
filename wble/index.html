@@ -57,7 +57,7 @@ document.getElementById('in_file').addEventListener('change', function() {
 	var total = document.querySelectorAll("#inst18 .list .listentry").length;
 	if (getCookie("UAMG1053") != total)
 	{
-		alert("Change!");
+		alert((parseInt(total) - parseInt(getCookie("UAMG1053"))) + " resources is just added to UAMG1053. Please take note!");
 		document.cookie = "UAMG1053="+total+"; expires=Sat, 31 Dec 2022 12:00:00 UTC; path=/";
 	}
     }
