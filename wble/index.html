@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+body {
+	background: #eee;
+	color: #222;
+	font-family: Arial;
+}
+.container {
+	margin: auto;
+	background: #fff;
+	height: 650px;
+	width: 80%;
+	text-align: center;
+}
+
+.container .header {
+	padding: 20px 0;
+}
+.container input{
+	border: none;
+}
+#view {
+	display: none;
+}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<h1> GCal AutoGenerator v1.0 </h1>
+			</div>
+<span>(1) Download timetable page from UTAR Portal. (right-click > Save as...)<br><br>
+(2) Upload UTAR Intranet_files/index.html here:</span>
+<br><br><input type="file" name="in_file" id="in_file">
+<br><br>(3) Your file will be downloaded shortly.
+<br><i>Can't download the file? Copy the following code and save it as June2022.ics .</i>
+<br><br>
+<textarea id="result" type="text" wrap="soft" style="width:250px;height:150px;cursor:pointer;display:none;margin:auto" readonly onclick="myFunction(this)"></textarea>
+		</div>
+
+		<div id="view"></div>
+		<script>
+document.getElementById('in_file').addEventListener('change', function() {
+	var fin = new FileReader();
+    fin.onload = function(){
+      alert(document.querySelectorAll("#inst18 .list .listentry").length);
+    }
+              
+    fin.readAsText(this.files[0]);
+});
+
+function myFunction(copyText) {
+	copyText.select();
+	navigator.clipboard.writeText(copyText.value);
+	alert("File copied!");
+}
+
+		</script>
+	</body>
+</html>
