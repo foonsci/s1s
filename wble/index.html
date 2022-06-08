@@ -55,10 +55,10 @@ document.getElementById('in_file').addEventListener('change', function() {
 	    
     document.getElementById('view').innerHTML = fin.result;
 	var total = document.querySelectorAll("#inst18 .list .listentry").length;
-	if (getCookie("UAMG1053") != total)
+	if (getCookie(fin.fileName) != total)
 	{
-		alert((parseInt(total) - parseInt(getCookie("UAMG1053"))) + " resources is just added to UAMG1053. Please take note!");
-		document.cookie = "UAMG1053="+total+"; expires=Sat, 31 Dec 2022 12:00:00 UTC; path=/";
+		alert((parseInt(total) - parseInt(getCookie("UAMG1053"))) + " resources is just added to "+fin.fileName+". Please take note!");
+		document.cookie = fin.fileName+"="+total+"; expires=Sat, 31 Dec 2022 12:00:00 UTC; path=/";
 	}
     }
               
