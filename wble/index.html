@@ -52,6 +52,8 @@ body {
 document.getElementById('in_file').addEventListener('change', function() {
 	var fin = new FileReader();
     fin.onload = function(){
+	    
+    document.getElementById('view').innerHTML = fin.result;
 	var total = document.querySelectorAll("#inst18 .list .listentry").length;
 	if (getCookie("UAMG1053") != total)
 	{
