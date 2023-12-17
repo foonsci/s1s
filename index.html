@@ -31,10 +31,11 @@ body {
 			<div class="header">
 				<h1> GCal AutoGenerator v1.0 </h1>
 			</div>
-<span>(1) Download timetable page from UTAR Portal. (right-click > Save as...)<br><br>
-(2) Upload UTAR Intranet_files/index.html here:</span>
+<span>(1) Enter the first day of the semester: <input type="date" id="date" required><br>
+	(2) Download timetable page from UTAR Portal. (right-click > Save as...)<br><br>
+(3) Upload UTAR Intranet_files/index.html here:</span>
 <br><br><input type="file" name="in_file" id="in_file">
-<br><br>(3) Your file will be downloaded shortly.
+<br><br>(4) Your file will be downloaded shortly.
 <br><i>Can't download the file? Copy the following code and save it as June2022.ics .</i>
 <br><br>
 <textarea id="result" type="text" wrap="soft" style="width:250px;height:150px;cursor:pointer;display:none;margin:auto" readonly onclick="myFunction(this)"></textarea>
@@ -80,7 +81,7 @@ document.getElementById('in_file').addEventListener('change', function() {
 	}
 	console.log(event_o);
 	
-	var date_cur = new Date();
+	var date_cur = new Date(document.getElementById("date").value);
 	var wday_cur = 1;
 	//for (var i = 0; i < 14; i++)
 	{
